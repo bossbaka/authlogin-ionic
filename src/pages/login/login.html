@@ -14,7 +14,7 @@
     Sign in with Google
   </button>
 
-  <p align="center" *ngIf="user != null">Welcome {{user.displayName}} <br>  {{ money }} </p>
+  <p align="center" *ngIf="user != null">Welcome {{user.displayName}} <br> {{ admin }} <br>  {{ money }} </p>
   <button *ngIf="user != null" ion-button icon-left block clear (click)="signOut()">
     Sign Out
   </button>

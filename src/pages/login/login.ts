@@ -10,7 +10,7 @@ import {
 
 import { Observable } from "rxjs/Observable";
 interface Items { money: any };
-
+interface Items { admin: any };
 
 /**
  * Generated class for the LoginPage page.
@@ -28,6 +28,7 @@ export class LoginPage {
 
   user: any;
   money: any;
+  admin: any;
   userCollection: AngularFirestoreCollection<Items>; //Firestore collection
   items: Observable<Items[]>; // read collection
 
@@ -59,6 +60,17 @@ export class LoginPage {
           this.money = null;
         }
         console.log(this.money);
+      });
+
+      this.items.forEach(element => {
+        console.log(element);
+        if (element[0] != null) {
+          this.admin = element[0].admin;
+        }
+        else {
+          this.admin = null;
+        }
+        console.log(this.admin);
       });
 
     }
